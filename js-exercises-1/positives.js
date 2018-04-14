@@ -10,7 +10,7 @@ function positiveNumbers(array) {
        newArray.push(array[i]);
      }
     }
-     console.log(newArray);
+    console.log(newArray);
 }
 
 positiveNumbers([-1,-2,-12,3,4,5,6]);
