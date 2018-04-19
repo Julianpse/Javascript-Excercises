@@ -4,7 +4,7 @@
 
   <title>Blackjack Game - Julian Se</title>
   <!--jQuery-->
-  <script src="jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </head>
 <style>
@@ -67,8 +67,6 @@ img {
   <label>Dealer: </label>
   <label id="dealer-points" class="points"></label>
   <div id="dealer-hand" class="hand">
-    <img src = "images/2c.png">
-    <img src = "images/8d.png">
   </div>
   </div>
 
@@ -77,8 +75,6 @@ img {
   <label>Player: </label>
   <label id="player-points" class="points"></label>
   <div id="player-hand" class="hand">
-    <img src = "images/qd.png">
-    <img src = "images/jh.png">
   </div>
   </div>
 
@@ -93,10 +89,91 @@ img {
 <script>
 
   $(document).ready(function(){
-    $("#deal-button").click(function(){
 
+    $("#deal-button").click(function(e){
+      e.preventDefault();
+      $("#dealer-hand").prepend('<img src ="images/9d.png">');
+      $("#dealer-hand").prepend('<img src ="images/2h.png">');
+      $("#player-hand").prepend('<img src ="images/jd.png">');
+      $("#player-hand").prepend('<img src ="images/as.png">');
     });
+
+    $("#hit-button").click(function(e){
+      e.preventDefault();
+      $("#player-hand").append('<img src ="images/jd.png">');
+    });
+
   });
+
+
+
+
+  var deck =[
+    {point: 1, suit: 'h'},
+    {point: 1, suit: 'd'},
+    {point: 1, suit: 'c'},
+    {point: 1, suit: 's'},
+
+    {point: 2, suit: 'h'},
+    {point: 2, suit: 'd'},
+    {point: 2, suit: 'c'},
+    {point: 2, suit: 's'},
+
+    {point: 3, suit: 'h'},
+    {point: 3, suit: 'd'},
+    {point: 3, suit: 'c'},
+    {point: 3, suit: 's'},
+
+    {point: 4, suit: 'h'},
+    {point: 4, suit: 'd'},
+    {point: 4, suit: 'c'},
+    {point: 4, suit: 's'},
+
+    {point: 5, suit: 'h'},
+    {point: 5, suit: 'd'},
+    {point: 5, suit: 'c'},
+    {point: 5, suit: 's'},
+
+    {point: 6, suit: 'h'},
+    {point: 6, suit: 'd'},
+    {point: 6, suit: 'c'},
+    {point: 6, suit: 's'},
+
+    {point: 7, suit: 'h'},
+    {point: 7, suit: 'd'},
+    {point: 7, suit: 'c'},
+    {point: 7, suit: 's'},
+
+    {point: 8, suit: 'h'},
+    {point: 8, suit: 'd'},
+    {point: 8, suit: 'c'},
+    {point: 8, suit: 's'},
+
+    {point: 9, suit: 'h'},
+    {point: 9, suit: 'd'},
+    {point: 9, suit: 'c'},
+    {point: 9, suit: 's'},
+
+    {point: 10, suit: 'h'},
+    {point: 10, suit: 'd'},
+    {point: 10, suit: 'c'},
+    {point: 10, suit: 's'},
+
+    {point: 11, suit: 'h'},
+    {point: 11, suit: 'd'},
+    {point: 11, suit: 'c'},
+    {point: 11, suit: 's'},
+  ];
+
+  dealerHand = [];
+  playerHand = [];
+
+  function calculatePoints(object) {
+    array = []
+    array.push(Object.values(object))
+    console.log(array)
+  }
+
 
 </script>
 
